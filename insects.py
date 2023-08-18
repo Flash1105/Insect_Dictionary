@@ -6,7 +6,7 @@ class Insect:
         self.diet = diet
         self.behavior = behavior
 
-## Sample insect data
+# Sample insect data
 insects = [
     Insect("Emperor Scorpion", "Pandinus imperator", "West Africa", "Insectavore", "Docile"),
     Insect("American Burying Beetle", "Nicrophorus americanus", "Central United States", "Insects and Carrion", "Nocturnal"),
@@ -55,7 +55,18 @@ insects = [
     Insect("Brazilian Salmon Pink Birdeater", "Lasiodora parahybana", "South America", "Insects and small vertebrates", "Burrowing"),
     Insect("Flordia Orb Weaver Spider", "Eriophora ravilla", "Southeastern United States", "Insects caught in webs", "Orb-weaver"),
 ]
+# Store insect details
 
+insect_details= {}
+for insect in insects:
+    insect_details[insect.name] = {
+        "scientific_name": insect.scientific_name,
+        "habitat": insect.habitat,
+        "diet": insect.diet,
+        "behavior": insect.behavior
+    }
+
+# Home page 
 def display_home_page():
     print("Welcome to the Insect Encyclopedia!")
     print("Available Insects:")
