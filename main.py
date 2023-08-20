@@ -1,57 +1,33 @@
-from insects import Insect
-from sqlalchemy import sessionmaker 
+from cli import display_home_page, display_insect_details, search_insects
+from database import Session, initialize_database
+from models import Insect
 
-def display_insect_names(session):
+def main():
+    session = Session()
+    initialize_database(session)  # Initialize the database if needed
+
+    display_home_page()
+
     insects = session.query(Insect).all()
-    print("Available Insects:")
-    for insect in insects:
-        print(insect.name)
 
+    while True:
+        try:
+            choice = int(input("Enter the number of an insect to learn more (0 to exit): "))
+            if choice == 0:
+                break
+            elif 1 <= choice <= len(insects):
+                selected_insect = insects[choice - 1]
+                insect = session.query(Insect).filter_by(name=selected_insect.name).first()
+                if insect:
+                    display_insect_details(insect)
+                else:
+                    print("Insect details not found in the database.")
+            else:
+                print("Invalid choice. Please enter a valid number.\n")
+        except ValueError:
+            print("Invalid input. Please enter a number.\n")
+    
+    session.close()
 
-##list of insects common name, science name, habitat, diet, behavior
-Emperor_scorpion  = Insect("Emperor Scorpion", "Pandinus imperator", "West Africa", "Insectavore", "Docile")
-American_burying_beetle = Insect("American Burying Beetle", "Nicrophorus americanus", "Central United States", "Insects and Carrion", "Nocturnal")
-Bat_cave_cockroach = Insect("Bat Cave Cockroach", "Eublaberus distanti", "Trinidad", "Organic Debris", "Nocturnal")
-Blue_death_feigning_beetle = Insect("Blue Death Feigning Beetle", "Asbolus verrucosus", "Southern United States", "decaying plant life", "death feiging")
-Domino_roach = Insect()
-Eastern_lubber_grasshopper = Insect()
-Emerald_beetle = Insect()
-Giant_jumping_stick = Insect()
-Giant_spiney_leaf_insect = Insect()
-Giant_walking_stick = Insect()
-Giant_water_bug = Insect()
-Green_leaf_cockroach = Insect()
-Grey_bird_grasshopper = Insect()
-Hissing_cockroach = Insect()
-Leaf_cutting_ant = Insect()
-Magnificent_flower_beetle = Insect()
-Red_eyed_assassin_bug = Insect()
-Rhinoceros_katydid = Insect()
-Sunburst_diving_beetle = Insect()
-Taxicab_beetle = Insect()
-Thorny_devil = Insect()
-Water_scorpion = Insect()
-Water_strider = Insect()
-White_eyed_assassin_bug = Insect()
-Yellow_bellied_beetle = Insect()
-Zebra_bug = Insect()
-Orchid_mantis = Insect()
-Carolina_mantis = Insect()
-Brown_recluse = Insect()
-Cave_whip_spider = Insect()
-Dead_leaf_mantis = Insect()
-Zophobas_darkling_beetle = Insect()
-Antilles_treespider = Insect()
-Giant_african_milipede = Insect()
-Jade_headed_buffalo_beetle = Insect()
-Red_kneed_tarantula = Insect()
-Brazilian_white_knee_tarantula = Insect()
-Texas_bullet_ant = Insect()
-Giant_cockroach = Insect()
-Dragon_headed_katydid = Insect()
-Madagascar_hissing_cockroach = Insect()
-Giant_dead_leaf_mantis = Insect()
-Peruvian_firestick = Insect()
-Peppered_roach = Insect()
-Brazilian_salmon_pink_birdeater = Insect()
-Flordia_orb_weaver_spider = Insect()
+if __name__ == "__main__":
+    main()
