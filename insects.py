@@ -83,6 +83,23 @@ def display_insect_details(selected_insect):
     print(f"Behavior: {selected_insect.behavior}")
     print()
 
+# Search
+def search_insects(criteria):
+    matching_insects = []
+    for insect in insects:
+        if criteria.lower() in insect.habitat.lower() or \
+           criteria.lower() in insect.diet.lower() or \
+           criteria.lower() in insect.behavior.lower():
+            matching_insects.append(insect)
+
+    if matching_insects:
+        print("Matching Insects:")
+        for index, insect in enumerate(matching_insects,start=1):
+            print(f"{index}. {insect.name}")
+        print()
+    else:
+        print("No insects match the search criteria. \n")
+           
 def main():
     display_home_page()
 
