@@ -137,7 +137,7 @@ def main():
             if choice == 0:
                 break
             elif 1 <= choice <= len(insects + spiders):
-                selected_item = insects[choice - 1] if choice <= len (insect) else spiders[choice - len(insects) - 1]
+                selected_item = insects[choice - 1] if choice <= len (insects) else spiders[choice - len(insects) - 1]
                 display_insect_or_spider_details(selected_item, choice > len(insects))
             else:
                 print("Invalid choice. Please enter a valid number.\n")
