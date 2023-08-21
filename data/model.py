@@ -93,9 +93,9 @@ for spider in spiders:
 
 # Home page 
 def display_home_page():
-    print("Welcome to the Insect Encyclopedia!")
-    print("Available Insects:")
-    for index, insect in enumerate(insects, start=1):
+    print("Welcome to the Insect and Spider Encyclopedia!")
+    print("Available Insects and Spiders:")
+    for index, insect in enumerate(insects + spiders, start=1):
         print(f"{index}. {insect.name}")
     print()
 
