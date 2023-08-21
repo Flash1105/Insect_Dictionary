@@ -1,5 +1,5 @@
-from database import session
-from models import Insect
+from data.database import session
+from data.model import Insect
 
 def display_insect_details(selected_insect):
     print("\nSelected Insect:")

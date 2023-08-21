@@ -1,16 +1,16 @@
 from cli import display_home_page, display_insect_details, search_insects
-from database import Session, initialize_database
-from models import Insect
+from data.database import Session, initialize_database
+from data.model import Insect
 
 def main():
     session = Session()
-    initialize_database(session)  # Initialize the database if needed
-
-    display_home_page()
+    initialize_database(session)  
 
     insects = session.query(Insect).all()
 
     while True:
+        display_home_page(insects)
+
         try:
             choice = int(input("Enter the number of an insect to learn more (0 to exit): "))
             if choice == 0:
