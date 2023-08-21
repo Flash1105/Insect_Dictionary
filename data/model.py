@@ -1,3 +1,13 @@
+class Spider:
+    def __init__(self, name, scientific_name, habitat, diet,behavior, venomous):
+        self.name = name
+        self.scientific_name = scientific_name
+        self.habitat = habitat
+        self.diet = diet
+        self.behavior = behavior
+        self.venomous = venomous
+
+
 class Insect:
     def __init__(self, name, scientific_name, habitat, diet, behavior):
         self.name = name
@@ -55,6 +65,9 @@ insects = [
     Insect("Brazilian Salmon Pink Birdeater", "Lasiodora parahybana", "South America", "Insects and small vertebrates", "Burrowing"),
     Insect("Flordia Orb Weaver Spider", "Eriophora ravilla", "Southeastern United States", "Insects caught in webs", "Orb-weaver"),
 ]
+
+# Sample spider data
+
 # Store insect details
 
 insect_details= {}
@@ -65,6 +78,7 @@ for insect in insects:
         "diet": insect.diet,
         "behavior": insect.behavior
     }
+
 
 # Home page 
 def display_home_page():
