@@ -121,19 +121,19 @@ def search_insects(criteria):
             matching_insects.append(insect)
 
     if matching_insects:
-        print("Matching Insects:")
+        print("Matching Animals:")
         for index, insect in enumerate(matching_insects,start=1):
             print(f"{index}. {insect.name}")
         print()
     else:
-        print("No insects match the search criteria. \n")
+        print("No animals match the search criteria. \n")
            
 def main():
     display_home_page()
 
     while True:
         try:
-            choice = int(input("Enter the number of an insect to learn more (0 to exit): "))
+            choice = int(input("Enter the number of an animal to learn more (0 to exit): "))
             if choice == 0:
                 break
             elif 1 <= choice <= len(insects + spiders):
