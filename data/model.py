@@ -67,7 +67,9 @@ insects = [
 ]
 
 # Sample spider data
-
+spiders = [
+    Spider("Black Widow", "Latrodectuss spp.", "Worldwide", "Insects", "Venomous", True),
+]
 # Store insect details
 
 insect_details= {}
@@ -79,6 +81,15 @@ for insect in insects:
         "behavior": insect.behavior
     }
 
+spider_details = {}
+for spider in spiders:
+    spider_details[spider.name] = {
+        "scientific_name": spider.scientific_name,
+        "habitat": spider.habitat,
+        "diet": spider.diet,
+        "behavior": spider.behavior,
+        "venomous": spider.venomous
+    }
 
 # Home page 
 def display_home_page():
