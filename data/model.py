@@ -99,13 +99,16 @@ def display_home_page():
         print(f"{index}. {insect.name}")
     print()
 
-def display_insect_details(selected_insect):
-    print("\nSelected Insect:")
-    print(f"Name: {selected_insect.name}")
-    print(f"Scientific Name: {selected_insect.scientific_name}")
-    print(f"Habitat: {selected_insect.habitat}")
-    print(f"Diet: {selected_insect.diet}")
-    print(f"Behavior: {selected_insect.behavior}")
+def display_insect_or_spider_details(selected_item, is_spider):
+    type_name = "Spider" if is_spider else "Insect"
+    print("\nSelected {type_name}:")
+    print(f"Name: {selected_item.name}")
+    print(f"Scientific Name: {selected_item.scientific_name}")
+    print(f"Habitat: {selected_item.habitat}")
+    print(f"Diet: {selected_item.diet}")
+    print(f"Behavior: {selected_item.behavior}")
+    if is_spider:
+        print(f"Venomous: {'Yes' if selected_item.venomous else 'No'}")
     print()
 
 # Search
