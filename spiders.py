@@ -11,3 +11,15 @@ spiders = [
         Spider("Black Widow", "Latrodectuss spp.", "Worldwide", "Insects", "Venomous", True),
 
 ]
+
+spider_details = {
+    spider.name: {
+        "sceintific_name": spider.sceintific_name, 
+        "habitat": spider.habitat, 
+        "diet": spider.diet,
+        "behavior": spider.behavior,
+        "venomous": spider.venomous
+
+    }
+    for spider in spiders
+}
