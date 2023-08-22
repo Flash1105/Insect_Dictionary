@@ -6,7 +6,7 @@ class Insect:
         self.diet = diet
         self.behavior = behavior
 
-# Sample insect data
+# sample insect data
 insects = [
     Insect("Emperor Scorpion", "Pandinus imperator", "West Africa", "Insectavore", "Docile"),
     Insect("American Burying Beetle", "Nicrophorus americanus", "Central United States", "Insects and Carrion", "Nocturnal"),
