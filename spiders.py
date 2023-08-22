@@ -6,4 +6,8 @@ class Spider:
         self.diet = diet
         self.behavior = behavior
         self.venomous = venomous
-        
+
+spiders = [
+        Spider("Black Widow", "Latrodectuss spp.", "Worldwide", "Insects", "Venomous", True),
+
+]
