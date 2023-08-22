@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, Column, Integer, String, Boolean
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from data.insects import insects, Insect
+from data.Insects import insects, Insect
 from data.spiders import spiders, Spider
 
 # creates database with SQlite
