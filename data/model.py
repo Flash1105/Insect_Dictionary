@@ -48,7 +48,7 @@ def display_home_page():
     print("Welcome to the Insect and Spider Encyclopedia!")
     print("Available Insects and Spiders:")
     for index, insect in enumerate(insects + spiders, start=1):
-        print(f"{index}. {insect['name']}")
+        print(f"{index}. {insect.name}")
     print()
 
 if __name__ == "__main__":
