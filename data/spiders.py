@@ -40,7 +40,7 @@ spiders = [
 
 spider_details = {
     spider.name: {
-        "scientific_name": spider.scientific_name, 
+        "scientific_name": spider.scietific_name, 
         "habitat": spider.habitat, 
         "diet": spider.diet,
         "behavior": spider.behavior,
