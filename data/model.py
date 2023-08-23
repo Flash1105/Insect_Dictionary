@@ -35,25 +35,13 @@ Base.metadata.create_all(engine)
 # populate the database
 def populate_database():
     for insect_data in insects:
-        insect = InsectTable(
-            name=insect_data['name'],
-            scientific_name=insect_data['scientific_name'],
-            habitat=insect_data['habitat'],
-            diet=insect_data['diet'],
-            behavior=insect_data['behavior']
-        )
+        insect = InsectTable(**insect_data.__dict__)
         session.add(insect)
     for spider_data in spiders:
-        spider = SpiderTable(
-            name=spider_data['name'],
-            scientific_name=spider_data['scientific_name'],
-            habitat=spider_data['habitat'],
-            diet=spider_data['diet'],
-            behavior=spider_data['behavior'],
-            venomous=spider_data['venomous']
-        )
+        spider = SpiderTable(**spider_data.__dict__)
         session.add(spider)
     session.commit()
+
 
 # Home page
 def display_home_page():
