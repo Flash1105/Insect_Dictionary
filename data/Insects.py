@@ -36,15 +36,12 @@ insects = [
     Insect("Zebra Bug", "Oecophylla smaragdina", "Australia and Asia", "Decaying Matter", "Colony builders"),
     Insect("Orchid Mantis", "Hymenopus coronatus", "Southeast Asia", "Insects", "Mimicry"),
     Insect("Carolina Mantis", "Stagmomantis carolina", "North America", "Insects", "Ambush predator"),
-    Insect("Brown Recluse", "Loxosceles reclusa", "United States", "Insects", "Nocturnal"),
-    Insect("Cave Whip Spider", "Phrynus marginemaculatus", "Caves in North and South America", "Small insects", "Camouflaged"),
+
     Insect("Dead Leaf Mantis", "Deroplatys lobata", "Southeast Asia", "Insects", "Leaf mimic"),
     Insect("Zophobas Darkling Beetle", "Zophobas morio", "South America", "Decaying organic matter", "Burrowing"),
     Insect("Antilles Treespider", "Ancylometes bogotensis", "Central and South America", "Insects and small vertebrates", "Ambush predator"),
     Insect("Giant African Millipede", "Archispirostreptus gigas", "Africa", "Decaying organic matter", "Millipede"),
     Insect("Jade Headed Buffalo Beetle", "Eupatorus gracilicornis", "Southeast Asia", "Decaying wood", "Colorful"),
-    Insect("Red Kneed Tarantula", "Brachypelma smithi", "Mexico", "Insects and small vertebrates", "Burrowing"),
-    Insect("Brazilian White Knee Tarantula", "Acanthoscurria geniculata", "South America", "Insects and small vertebrates", "Burrowing"),
     Insect("Texas Bullet Ant", "Paraponera clavata", "South America", "Insects and nectar", "Painful sting"),
     Insect("Giant Cockroach", "Megacephala batesi", "Central and South America", "Decaying matter", "Nocturnal"),
     Insect("Dragon Headed Katydid", "Ephippiger ephippiger", "Europe", "Leaves", "Camouflaged"),
@@ -52,8 +49,6 @@ insects = [
     Insect("Giant Dead Leaf Mantis", "Deroplatys dessicata", "Southeast Asia", "Insects", "Leaf mimic"),
     Insect("Peruvian Firestick", "Oreophoetes peruana", "South America", "Decaying vegetation", "Bioluminescent"),
     Insect("Peppered Roach", "Archimandrita tesselata", "Central America", "Decaying matter", "Nocturnal"),
-    Insect("Brazilian Salmon Pink Birdeater", "Lasiodora parahybana", "South America", "Insects and small vertebrates", "Burrowing"),
-    Insect("Flordia Orb Weaver Spider", "Eriophora ravilla", "Southeastern United States", "Insects caught in webs", "Orb-weaver"),
 ]
 
 #Insect details dictionary
