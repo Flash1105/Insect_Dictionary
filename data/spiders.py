@@ -1,7 +1,7 @@
 class Spider: 
     def __init__ (self, name, scientific_name, habitat, diet, behavior, venomous):
         self.name = name 
-        self.scietific_name = scientific_name
+        self.scientific_name = scientific_name
         self.habitat = habitat
         self.diet = diet
         self.behavior = behavior
@@ -40,7 +40,7 @@ spiders = [
 
 spider_details = {
     spider.name: {
-        "scientific_name": spider.scietific_name, 
+        "scientific_name": spider.scientific_name, 
         "habitat": spider.habitat, 
         "diet": spider.diet,
         "behavior": spider.behavior,
