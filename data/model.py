@@ -10,7 +10,7 @@ Base = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()
 
-class InsectDB(Base):
+class InsectTable(Base):
     __tablename__ = 'insects'
     id = Column(Integer, primary_key=True)
     name = Column(String, unique=True)
@@ -19,7 +19,7 @@ class InsectDB(Base):
     diet = Column(String)
     behavior = Column(String)
 
-class SpiderDB(Base):
+class SpiderTable(Base):
     __tablename__ = 'spiders'
     id = Column(Integer, primary_key=True)
     name = Column(String, unique=True)
@@ -35,10 +35,10 @@ Base.metadata.create_all(engine)
 # populate the database
 def populate_database():
     for insect_data in insects:
-        insect = InsectDB(**insect_data)
+        insect = InsectTable(**insect_data)
         session.add(insect)
     for spider_data in spiders:
-        spider = SpiderDB(**spider_data)
+        spider = SpiderTable(**spider_data)
         session.add(spider)
     session.commit()
 
