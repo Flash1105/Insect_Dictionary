@@ -63,25 +63,56 @@ def populate_database():
 
 
 # Home page
-def display_home_page():
-    print("Welcome to the Insect and Spider Encyclopedia!")
-    print("Available Insects and Spiders:")
-    for index, animal in enumerate(insects + spiders, start=1):
-        print(f"{index}. {animal.name}")
-    print()
 
-    try:
-        selection = int(input("Enter the number of the animal to get more information: "))
-        selected_animal = (insects + spiders)[selection - 1]
-        print("\nAnimal Information:")
-        print(f"Name: {selected_animal.name}")
-        print(f"Scientific Name: {selected_animal.scientific_name}")
-        print(f"Habitat: {selected_animal.habitat}")
-        print(f"Diet: {selected_animal.diet}")
-        print(f"Behavior: {selected_animal.behavior}")
-    except (ValueError, IndexError):
-        print("Invalid selection. Please enter a valid number.")
+def homepage():
+    print("Welcome to the Insect and Spider Encyclopedia!")
+    print("1. Get a spider fact")
+    print("2. Get an insect fact")
+    print("3. Exit")
+
+def main_menu():
+    while True:
+        homepage()
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            spider_name = input("Enter the name of the spider: ")
+            display_spider_details(spider_name)
+        elif choice == "2":
+            insect_name = input("Enter the name of the insect: ")
+            display_insect_details(insect_name)
+        elif choice == "3":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please select a valid option.")
+
+def display_spider_details(name):
+    spider = session.query(SpiderTable).filter_by(name=name).first()
+    if spider:
+        print("Spider Information:")
+        print(f"Name: {spider.name}")
+        print(f"Scientific Name: {spider.scientific_name}")
+        print(f"Habitat: {spider.habitat}")
+        print(f"Diet: {spider.diet}")
+        print(f"Behavior: {spider.behavior}")
+        print(f"Venomous: {spider.venomous}")
+    else:
+        print("Spider not found.")
+
+def display_insect_details(name):
+    insect = session.query(InsectTable).filter_by(name=name).first()
+    if insect:
+        print("Insect Information:")
+        print(f"Name: {insect.name}")
+        print(f"Scientific Name: {insect.scientific_name}")
+        print(f"Habitat: {insect.habitat}")
+        print(f"Diet: {insect.diet}")
+        print(f"Behavior: {insect.behavior}")
+    else:
+        print("Insect not found.")
 
 if __name__ == "__main__":
     populate_database()
-    display_home_page()
+    main_menu()
