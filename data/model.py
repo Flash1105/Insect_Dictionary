@@ -47,9 +47,21 @@ def populate_database():
 def display_home_page():
     print("Welcome to the Insect and Spider Encyclopedia!")
     print("Available Insects and Spiders:")
-    for index, insect in enumerate(insects + spiders, start=1):
-        print(f"{index}. {insect.name}")
+    for index, animal in enumerate(insects + spiders, start=1):
+        print(f"{index}. {animal.name}")
     print()
+
+    try:
+        selection = int(input("Enter the number of the animal to get more information: "))
+        selected_animal = (insects + spiders)[selection - 1]
+        print("\nAnimal Information:")
+        print(f"Name: {selected_animal.name}")
+        print(f"Scientific Name: {selected_animal.scientific_name}")
+        print(f"Habitat: {selected_animal.habitat}")
+        print(f"Diet: {selected_animal.diet}")
+        print(f"Behavior: {selected_animal.behavior}")
+    except (ValueError, IndexError):
+        print("Invalid selection. Please enter a valid number.")
 
 if __name__ == "__main__":
     populate_database()
