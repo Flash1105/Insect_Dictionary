@@ -61,13 +61,39 @@ def populate_database():
     
     session.commit()
 
+# display list of insects
+def display_animal_list():
+    print("Available Insects:")
+    for index, animal in enumerate(insects, start=1):
+        print(f"{index}. {animal.name}")
+    print()
+
+# Display spider list
+
+def display_spider_list():
+    print("Available Spiders:")
+    for index, spider in enumerate(spiders, start=1):
+        print(f"{index}. {spider.name}")
+    print()
+
+# display details of animal
+def display_animal_details(animal):
+    print("\nAnimal Information:")
+    print(f"Name: {animal.name}")
+    print(f"Scientific Name: {animal.scientific_name}")
+    print(f"Habitat: {animal.habitat}")
+    print(f"Diet: {animal.diet}")
+    print(f"Behavior: {animal.behavior}")
+    if isinstance(animal, Spider):
+        print(f"Venomous: {'Yes' if animal.venomous else 'No'}")
+
 
 # Home page
 
 def homepage():
     print("Welcome to the Insect and Spider Encyclopedia!")
-    print("1. Get a spider fact")
-    print("2. Get an insect fact")
+    print("1. Get an insect fact")
+    print("2. Get a spider fact")
     print("3. Exit")
 
 def main_menu():
@@ -77,41 +103,26 @@ def main_menu():
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            spider_name = input("Enter the name of the spider: ")
-            display_spider_details(spider_name)
+            display_animal_list()
+            animal_index = int(input("Enter the number of the animal: "))
+            if 1 <= animal_index <= len(insects + spiders):
+                selected_animal = (insects + spiders)[animal_index - 1]
+                display_animal_details(selected_animal)
+            else:
+                print("Invalid animal number.")
         elif choice == "2":
-            insect_name = input("Enter the name of the insect: ")
-            display_insect_details(insect_name)
+            display_spider_list()
+            spider_index = int(input("Enter the number of the spider: "))
+            if 1 <= spider_index <= len(spiders):
+                selected_spider = spiders[spider_index - 1]
+                display_animal_details(selected_spider)
+            else:
+                print("Invalid spider number.")
         elif choice == "3":
             print("Goodbye!")
             break
         else:
             print("Invalid choice. Please select a valid option.")
-
-def display_spider_details(name):
-    spider = session.query(SpiderTable).filter_by(name=name).first()
-    if spider:
-        print("Spider Information:")
-        print(f"Name: {spider.name}")
-        print(f"Scientific Name: {spider.scientific_name}")
-        print(f"Habitat: {spider.habitat}")
-        print(f"Diet: {spider.diet}")
-        print(f"Behavior: {spider.behavior}")
-        print(f"Venomous: {spider.venomous}")
-    else:
-        print("Spider not found.")
-
-def display_insect_details(name):
-    insect = session.query(InsectTable).filter_by(name=name).first()
-    if insect:
-        print("Insect Information:")
-        print(f"Name: {insect.name}")
-        print(f"Scientific Name: {insect.scientific_name}")
-        print(f"Habitat: {insect.habitat}")
-        print(f"Diet: {insect.diet}")
-        print(f"Behavior: {insect.behavior}")
-    else:
-        print("Insect not found.")
 
 if __name__ == "__main__":
     populate_database()
