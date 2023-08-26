@@ -43,9 +43,7 @@ def populate_database(insects, spiders):
 def initialize_database(session):
     Base.metadata.drop_all(engine)
     create_tables()
-
-
-    populate_database(insects, Spiders())
+    populate_database(insects, Spiders)
 
 if __name__ == "__main__":
     initialize_database()
