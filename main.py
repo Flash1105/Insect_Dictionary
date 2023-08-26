@@ -1,7 +1,7 @@
 from Insects import insects, Insect
 from spiders import spiders, Spider
 
-from lib.cli import main_menu, display_insect_details, display_spider_details 
+from lib.cli import main_menu, display_insect_details, display_spider_list, display_animal_list 
 from data.database import Session, initialize_database
 from data.model import Insect
 
