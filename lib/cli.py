@@ -7,6 +7,7 @@ from data.model import InsectTable, SpiderTable
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 session = Session()
+
 def main_menu():
     while True:
         print("Welcome to the Insect and Spider Encyclodedia!")
@@ -15,6 +16,16 @@ def main_menu():
         print("3. Exit")
 
         choice = input("Enter your choice:")
+
+        if choice =='1':
+            display_insect_list()
+        elif choice == '2':
+            display_spider_list()
+        elif choice == '3':
+            print ("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please chose a valid number. \n")
 
 def display_insect_details(animal):
     print("\nSelected Insect:")
