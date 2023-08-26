@@ -7,7 +7,12 @@ from data.model import InsectTable, SpiderTable
 engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 session = Session()
-
+def main_menu():
+    while True:
+        print("Welcome to the Insect and Spider Encyclodedia!")
+        print ("1. Get an insect fact")
+        print ("2. Get a spider fact")
+        print("3. Exit")
 
 def display_insect_details(animal):
     print("\nSelected Insect:")
