@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from data.model import Base, InsectTable, SpiderTable
 from Insects import insects, Insect
-from spiders import spider, Spider
+from spiders import Spiders, Spider
 
 # Database setup
 DATABASE_URL = 'sqlite:///insect_database.db'
