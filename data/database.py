@@ -1,6 +1,6 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from data.model import Base, Insect, Spider
+from data.model import Base, InsectTable, SpiderTable
 from Insects import insects, Insect
 from spiders import spider, Spider
 
