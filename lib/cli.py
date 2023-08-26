@@ -27,3 +27,11 @@ def display_animal_list():
     for index, animal in enumerate(insects + spiders, start=1):
         print(f"{index}. {animal.name}")
     print()
+
+def display_spider_list():
+    print("Available Spiders:")
+    spiders = session.query(SpiderTable).all()
+    
+    for index, spider in enumerate(spiders, start=1):
+        print(f"{index}. {spider.name}")
+    print()
