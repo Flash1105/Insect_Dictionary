@@ -2,11 +2,11 @@ from Insects import insects, Insect
 from spiders import Spiders, Spider
 
 from lib.cli import main_menu, display_insect_details, display_spider_list, display_insect_list 
-from data.database import Session, initialize_database
+from data.database import session, initialize_database
 from data.model import InsectTable, SpiderTable
 
 def main():
-    session = Session()
+    
     initialize_database(session)  
 
     insects = session.query(Insect).all()
