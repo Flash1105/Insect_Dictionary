@@ -1,3 +1,5 @@
+from Insects import insects, Insect
+from spiders import spiders, Spider
 from data.database import session
 from data.model import Insect
 
