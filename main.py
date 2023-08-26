@@ -1,4 +1,4 @@
-from Insects import insects, Insect
+from Insects import insects
 from spiders import Spiders
 
 from lib.cli import main_menu, display_insect_details, display_spider_list, display_insect_list 
@@ -8,8 +8,6 @@ from data.model import InsectTable, SpiderTable
 def main():
     
     initialize_database(session)  
-
-    insects = session.query(Insect).all()
 
     while True:
         main_menu(insects)
@@ -21,7 +19,7 @@ def main():
 
             elif 1 <= choice <= len(insects):
                 selected_insect = insects[choice - 1]
-                insect = session.query(Insect).filter_by(name=selected_insect.name).first()
+                insect = session.query(InsectTable).filter_by(name=selected_insect.name).first()
                 if insect:
                     display_insect_details(insect)
                 else:
