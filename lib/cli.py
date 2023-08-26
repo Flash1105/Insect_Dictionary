@@ -1,7 +1,7 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
-from data.database import session
-from data.model import Insect
+from data.database import DATABASE_URL
+from data.model import InsectTable, SpiderTable
 
 def display_insect_details(selected_insect):
     print("\nSelected Insect:")
