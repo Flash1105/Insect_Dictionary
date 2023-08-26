@@ -3,7 +3,7 @@ from spiders import Spiders, Spider
 
 from lib.cli import main_menu, display_insect_details, display_spider_list, display_insect_list 
 from data.database import Session, initialize_database
-from data.model import Insect
+from data.model import InsectTable
 
 def main():
     session = Session()
