@@ -14,6 +14,8 @@ def main_menu():
         print ("2. Get a spider fact")
         print("3. Exit")
 
+        choice = input("Enter your choice:")
+
 def display_insect_details(animal):
     print("\nSelected Insect:")
     print(f"Name: {animal.name}")
