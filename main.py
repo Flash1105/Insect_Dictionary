@@ -1,3 +1,6 @@
+from Insects import insects, Insect
+from spiders import spiders, Spider
+
 from lib.cli import display_home_page, display_insect_details, search_insects
 from data.database import Session, initialize_database
 from data.model import Insect
