@@ -19,4 +19,11 @@ def display_insect_details(animal):
     if isinstance(animal, SpiderTable):
         print(f"Venomous: {'Yes' if animal.venomous else 'No'}")
 
-
+def display_animal_list():
+    print("Available Animals:")
+    insects = session.query(InsectTable).all()
+    spiders = session.query(SpiderTable).all()
+    
+    for index, animal in enumerate(insects + spiders, start=1):
+        print(f"{index}. {animal.name}")
+    print()
