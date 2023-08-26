@@ -1,7 +1,7 @@
 from Insects import insects, Insect
 from spiders import spiders, Spider
 
-from lib.cli import display_home_page, display_insect_details
+from lib.cli import main_menu, display_insect_details, display_spider_details 
 from data.database import Session, initialize_database
 from data.model import Insect
 
@@ -12,7 +12,7 @@ def main():
     insects = session.query(Insect).all()
 
     while True:
-        display_home_page(insects)
+        main_menu(insects)
 
         try:
             choice = int(input("Enter the number of an insect to learn more (0 to exit): "))
