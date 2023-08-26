@@ -15,8 +15,17 @@ The Insect and Spider Encyclopedia is a project made to provide users with facts
 - Get details about selected spider or insect. 
 
 # Getting Started
+
 # Prerequisites
+
+-Python 3.x
+-SQLite
+
 # Installation
+
+1. Clone the repository to your local machine: 
+"git clone https://github.com/Flash1105/Insect_Dictionary
+
 # Usage
 # Contributing
 # license 
