@@ -123,6 +123,7 @@ def main_menu():
             break
         else:
             print("Invalid choice. Please select a valid option.")
+        
 
 if __name__ == "__main__":
     populate_database()
