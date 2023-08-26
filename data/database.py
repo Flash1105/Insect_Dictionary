@@ -1,5 +1,3 @@
-from Insects import insects, Insect
-from spiders import spiders, Spider
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from data.model import Base, Insect, Spider
