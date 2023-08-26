@@ -7,7 +7,7 @@ class Spider:
         self.behavior = behavior
         self.venomous = venomous
 
-spiders = [
+Spiders = [
     Spider("Black Widow", "Latrodectus spp.", "Worldwide", "Insects", "Venomous", True),
     Spider("Wolf Spider", "Lycosidae", "Worldwide", "Insects and small vertebrates", "Hunting", False),
     Spider("Golden Silk Orb Weaver", "Nephila spp.", "Tropical regions", "Flying insects", "Orb-weaver", False),
@@ -47,5 +47,5 @@ spider_details = {
         "venomous": spider.venomous
 
     }
-    for spider in spiders
+    for spider in Spiders
 }
