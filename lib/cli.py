@@ -19,13 +19,33 @@ def main_menu():
 
         if choice =='1':
             display_insect_list()
+            try:
+                insect_choice = int(input("Enter the numberof an insect to learn more (0 to exit):"))
+                if 1 <= insect_choice <= len(insects):
+                    selected_insect = insects[insects_choice - 1]
+                    display_insect_details(selected_insect)
+                else:
+                    print("Invalid choice. Please enter a valid number. \r")
+            except ValueError:
+                print("Invalid input. Please enter a number. \r")
+
         elif choice == '2':
             display_spider_list()
+            try:
+                spider_choice = int(input("Enter the number of a spider to learn more (0 to exit): "))
+                if 1 <= spider_choice <= len(spiders):
+                    selected_spider = spiders[spider_choice - 1]
+                    display_spider_details(selected_spider)
+                else:
+                    print("Invalid choice. Please enter a valid number.\n")
+            except ValueError:
+                print("Invalid input. Please enter a number.\n")
+
         elif choice == '3':
-            print ("Exiting the program.")
+            print("Exiting the program.")
             break
         else:
-            print("Invalid choice. Please chose a valid number. \n")
+            print("Invalid choice. Please enter a valid number.\n")
 
 def display_insect_details(animal):
     print("\nSelected Insect:")
