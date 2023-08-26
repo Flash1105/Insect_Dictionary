@@ -40,3 +40,6 @@ def display_spider_list():
     for index, spider in enumerate(spiders, start=1):
         print(f"{index}. {spider.name}")
     print()
+
+if __name__ == "__main__":
+    main_menu()
