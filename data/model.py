@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-
+# Define Bases as tables for both 
 class InsectTable(Base):
     __tablename__ = 'insects'
     id = Column(Integer, primary_key=True)
