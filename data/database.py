@@ -10,11 +10,11 @@ engine = create_engine(DATABASE_URL)
 Session = sessionmaker(bind=engine)
 session = Session()
 
-# create tables
+# Create tables
 def create_tables():
     Base.metadata.create_all(engine)
 
-# populate the database
+# Populate the database
 def populate_database(insects, spiders):
     for insect_data in insects:
         insect = InsectTable(

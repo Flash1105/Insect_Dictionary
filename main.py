@@ -3,9 +3,9 @@ from data.database import session, initialize_database
 
 def main():
     
-    initialize_database(session)  
-    main_menu()
-    session.close()
+    initialize_database(session)  # Calls function to set up database
+    main_menu()  # Calls function to start main menu
+    session.close() # closes SQLAlchemy session 
 
 if __name__ == "__main__":
     main()
