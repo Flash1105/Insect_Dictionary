@@ -32,7 +32,7 @@ def main_menu():
 
         elif choice == '2':
             spiders = display_spider_list()
-            display_spider_list()
+            
             try:
                 spider_choice = int(input("Enter the number of a spider to learn more (0 to exit): "))
                 if 1 <= spider_choice <= len(spiders):
