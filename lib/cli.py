@@ -59,7 +59,14 @@ def display_insect_details(animal):
     if isinstance(animal, SpiderTable):
         print(f"Venomous: {'Yes' if animal.venomous else 'No'}")
 
-
+def display_spider_details(spider):
+    print("\nSelected Spider:")
+    print(f"Name: {spider.name}")
+    print(f"Scientific Name: {spider.scientific_name}")
+    print(f"Habitat: {spider.habitat}")
+    print(f"Diet: {spider.diet}")
+    print(f"Behavior: {spider.behavior}")
+    print(f"Venomous: {'Yes' if spider.venomous else 'No'}")
 
 def display_insect_list():
     print("Available Animals:")
