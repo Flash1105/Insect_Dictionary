@@ -26,6 +26,7 @@ The Insect and Spider Encyclopedia is a project made to provide users with facts
 # Prerequisites
 
 -Python 3.x
+
 -SQLite
 
 # Usage
