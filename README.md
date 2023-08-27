@@ -31,7 +31,7 @@ The Insect and Spider Encyclopedia is a project made to provide users with facts
 
 # Usage
 1. Clone the Repository to your local machine.
-git clone git@github.come/Flash1105/Insect_Dictionary
+git clone git@github.com/Flash1105/Insect_Dictionary.git
 
 2. Navigate to the project directory.
 
