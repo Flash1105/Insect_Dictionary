@@ -18,11 +18,12 @@ def main_menu():
         choice = input("Enter your choice:")
 
         if choice =='1':
+            insects = display_insect_list()
             display_insect_list()
             try:
                 insect_choice = int(input("Enter the numberof an insect to learn more (0 to exit):"))
                 if 1 <= insect_choice <= len(insects):
-                    selected_insect = insects[insects_choice - 1]
+                    selected_insect = insects[insect_choice - 1]
                     display_insect_details(selected_insect)
                 else:
                     print("Invalid choice. Please enter a valid number. \r")
@@ -30,6 +31,7 @@ def main_menu():
                 print("Invalid input. Please enter a number. \r")
 
         elif choice == '2':
+            spiders = display_spider_list()
             display_spider_list()
             try:
                 spider_choice = int(input("Enter the number of a spider to learn more (0 to exit): "))
@@ -56,6 +58,8 @@ def display_insect_details(animal):
     print(f"Behavior: {animal.behavior}")
     if isinstance(animal, SpiderTable):
         print(f"Venomous: {'Yes' if animal.venomous else 'No'}")
+
+
 
 def display_insect_list():
     print("Available Animals:")
