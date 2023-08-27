@@ -13,6 +13,7 @@ The Insect and Spider Encyclopedia is a project made to provide users with facts
 
 - View a list of available insects and spiders.  
 - Get details about selected spider or insect. 
+- Select animals from the available list to learn about their characteristics.
 
 # Getting Started
 
@@ -27,5 +28,10 @@ The Insect and Spider Encyclopedia is a project made to provide users with facts
 "git clone https://github.com/Flash1105/Insect_Dictionary
 
 # Usage
+1. Clone the Repository
+2. 
 # Contributing
-# license 
+Contributions to this project are welcome! If you have any ideas for improvements, bug fixes, or new features, feel free to create a pull request. Please ensure that you follow best practices and provide detailed information about your contributions.
+
+# License
+This project is licensed under the MIT License.
