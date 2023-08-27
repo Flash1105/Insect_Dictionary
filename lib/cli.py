@@ -50,7 +50,7 @@ def main_menu():
             break
         else:
             print("Invalid choice. Please enter a valid number.\n")
-            
+
 def display_insect_details(animal):
     print("\nSelected Insect:")
     print(f"Name: {animal.name}")
@@ -75,9 +75,10 @@ def display_insect_list():
     insects = session.query(InsectTable).all()
     spiders = session.query(SpiderTable).all()
     
-    for index, animal in enumerate(insects + spiders, start=1):
+    for index, animal in enumerate(insects, start=1):
         print(f"{index}. {animal.name}")
     print()
+    return insects
 
 def display_spider_list():
     print("Available Spiders:")
@@ -86,6 +87,7 @@ def display_spider_list():
     for index, spider in enumerate(spiders, start=1):
         print(f"{index}. {spider.name}")
     print()
+    return spiders
 
 if __name__ == "__main__":
     main_menu()
