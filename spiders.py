@@ -8,7 +8,7 @@ class Spider:
         self.venomous = venomous
 
 Spiders = [
-    Spider("Black Widow", "Latrodectus spp.", "Worldwide", "Insects", "Venomous", True),
+    Spider("Black Widow", "Latrodectus spp.", "Worldwide", "Insects", "Nonaggressive", True),
     Spider("Wolf Spider", "Lycosidae", "Worldwide", "Insects and small vertebrates", "Hunting", False),
     Spider("Golden Silk Orb Weaver", "Nephila spp.", "Tropical regions", "Flying insects", "Orb-weaver", False),
     Spider("Brown Widow", "Latrodectus geometricus", "Worldwide", "Insects", "Venomous", True),
