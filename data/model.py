@@ -35,11 +35,7 @@ class AnimalFact(Base):
     __tablename__ = 'animal_facts'
     id = Column(Integer, primary_key=True)
     fact = Column(String)
-
-# foreign key relationships
-insect_id = Column(Integer, ForeignKey('insects.id'))
-spider_id = Column(Integer, ForeignKey('spiders.id'))
-
-
-insect = relationship("InsectTable", back_populates="facts")
-spider = relationship("SpiderTable", back_populates="facts")
+    insect_id = Column(Integer, ForeignKey('insects.id'))
+    insect = relationship("InsectTable", back_populates="facts")
+    spider_id = Column(Integer, ForeignKey('spider.id'))
+    spider = relationship("SpiderTable", back_populates="facts")
