@@ -1,7 +1,7 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from data.database import DATABASE_URL
-from data.model import InsectTable, SpiderTable
+from data.model import InsectTable, SpiderTable, FactTable
 
 #setup for database
 engine = create_engine(DATABASE_URL)
@@ -89,5 +89,17 @@ def display_spider_list():
     print()
     return spiders
 
+
+
+
+def display_animal_facts(animal):
+    facts = session.query(FactTable).filter_by(animal_id=animal.id).all()
+    if not facts:
+        print("No facts available for this animal.")
+    else:
+        print("Facts:")
+        for fact in facts:
+            print(f"- {fact.content}")
+            
 if __name__ == "__main__":
-    main_menu()
+    main_menu() 
