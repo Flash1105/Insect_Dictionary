@@ -39,17 +39,7 @@ def populate_database(insects, spiders):
 
     session.commit()
 
-def add_insect_fact(insect, fact):
-    new_fact = AnimalFact(fact=fact, insect=insect)
-    session.add(new_fact)
-    session.commit()
-    print("Fact added successfully!")
 
-def add_spider_fact(spider, fact):
-    new_fact = AnimalFact(fact=fact, spider=spider)
-    session.add(new_fact)
-    session.commit()
-    print("Fact added successfully!")
 
 def initialize_database(session):
     Base.metadata.drop_all(engine)
