@@ -93,13 +93,19 @@ def display_spider_list():
 
 
 def display_animal_facts(animal):
-    facts = session.query(FactTable).filter_by(animal_id=animal.id).all()
-    if not facts:
-        print("No facts available for this animal.")
-    else:
-        print("Facts:")
+    print("\nSelected Animal Facts:")
+    facts = []
+    
+    if isinstance(animal, InsectTable):
+        facts = animal.facts
+    elif isinstance(animal, SpiderTable):
+        facts = animal.facts
+    
+    if facts:
         for fact in facts:
-            print(f"- {fact.content}")
-            
+            print(f"Fact: {fact.content}")
+    else:
+        print("No facts available for this animal.")
+
 if __name__ == "__main__":
     main_menu() 
