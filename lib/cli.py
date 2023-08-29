@@ -61,6 +61,11 @@ def display_insect_details(animal):
     if isinstance(animal, SpiderTable):
         print(f"Venomous: {'Yes' if animal.venomous else 'No'}")
 
+    add_fact_option = input("Do you want to add a fact about this insect? (yes/no):")
+    if add_fact_option.lower() =='yes':
+        fact = input ("Enter the fact:")
+    add_insect_fact(animal, fact)
+
 def display_spider_details(spider):
     print("\nSelected Spider:")
     print(f"Name: {spider.name}")
