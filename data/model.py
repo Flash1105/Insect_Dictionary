@@ -16,7 +16,7 @@ class InsectTable(Base):
     behavior = Column(String)
 
     # One-to-many relationship with facts
-    facts = relationship ("FactTable", back_populates="insect")
+    facts = relationship ("AnimalFact", back_populates="insect")
 
 
 class SpiderTable(Base):
@@ -29,10 +29,12 @@ class SpiderTable(Base):
     behavior = Column(String)
     venomous = Column(Boolean)
 
-class FactTable(Base):
-    __tablename__ = 'facts'
-id = Column(Integer, primary_key=True)
-content = Column(String)
+    facts = relationship("AnimalFact", back_populates="spider")
+
+class AnimalFact(Base):
+    __tablename__ = 'animal_facts'
+    id = Column(Integer, primary_key=True)
+    fact = Column(String)
 
 # foreign key relationships
 insect_id = Column(Integer, ForeignKey('insects.id'))
