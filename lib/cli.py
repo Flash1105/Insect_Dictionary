@@ -61,11 +61,7 @@ def display_insect_details(animal):
     if isinstance(animal, SpiderTable):
         print(f"Venomous: {'Yes' if animal.venomous else 'No'}")
 
-    add_fact_option = input("Do you want to add a fact about this insect? (yes/no): ")
-    if add_fact_option.lower() == 'yes':
-        fact = input("Enter the fact: ")
-        add_insect_fact(animal, fact)
-
+  
 def display_spider_details(spider):
     print("\nSelected Spider:")
     print(f"Name: {spider.name}")
@@ -75,22 +71,7 @@ def display_spider_details(spider):
     print(f"Behavior: {spider.behavior}")
     print(f"Venomous: {'Yes' if spider.venomous else 'No'}")
 
-    add_fact_option = input("Do you want to add a fact about this spider? (yes/no): ")
-    if add_fact_option.lower() =='yes':
-        fact = input("Enter the fact: ")
-        add_spider_fact(spider, fact)
 
-def add_insect_fact(insect, fact):
-    new_fact = AnimalFact(fact=fact, insect=insect)
-    session.add(new_fact)
-    session.commit()
-    print("Fact added successfully!")
-
-def add_spider_fact(spider, fact):
-    new_fact = AnimalFact(fact=fact, spider=spider)
-    session.add(new_fact)
-    session.commit()
-    print("Fact added successfully!")
 
 
 def display_insect_list():
