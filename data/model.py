@@ -12,7 +12,8 @@ class InsectTable(Base):
     habitat = Column(String)
     diet = Column(String)
     behavior = Column(String)
-    facts = relationship("AnimalFact", back_populates="insect")
+    predator_id = Column(Integer, ForeignKey('predators.id'))
+    predator = relationship("Predator", back_populates="insects")
 
 class SpiderTable(Base):
     __tablename__ = 'spiders'
@@ -23,13 +24,15 @@ class SpiderTable(Base):
     diet = Column(String)
     behavior = Column(String)
     venomous = Column(Boolean)
-    facts = relationship("AnimalFact", back_populates="spider")
+    predator_id = Column(Integer, ForeignKey('predators.id'))
+    predator = relationship("Predator", back_populates="spiders")
 
-class AnimalFact(Base):
-    __tablename__ = 'animal_facts'
+
+class Predator(Base):
+    __tablename__='predators'
     id = Column(Integer, primary_key=True, index=True)
-    fact = Column(String)
-    insect_id = Column(Integer, ForeignKey('insects.id'))
-    insect = relationship("InsectTable", back_populates="facts")
-    spider_id = Column(Integer, ForeignKey('spiders.id'))
-    spider = relationship("SpiderTable", back_populates="facts")
+    name = Column(String, unique=True)
+
+    insects = relationship("InsectTable", back_populates="predator")
+    spiders = relationship("SpiderTable", back_populates="predator")
+    
