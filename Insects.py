@@ -1,5 +1,3 @@
-from data.model import AnimalFact
-
 class Insect:
     def __init__(self, name, scientific_name, habitat, diet, behavior):
         self.name = name
@@ -7,35 +5,8 @@ class Insect:
         self.habitat = habitat
         self.diet = diet
         self.behavior = behavior
-        self.facts = []
 
-# Facts for insects
-insect_facts = [
-   "Insects are the largest group of animals on Earth.",
-    "Insects play a vital role in pollination of plants.",
-    "Insects have three body segments: head, thorax, and abdomen.",
-    "Some insects can walk on water due to surface tension.",
-    "The lifespan of insects varies widely, from a few hours to several years.",
-    "Insects have a hard exoskeleton that provides protection and support.",
-    "Some insects, like ants, live in complex social colonies with different roles.",
-    "Insects have diverse feeding habits, including herbivores, carnivores, and scavengers.",
-    "Many insects go through a process called metamorphosis, changing form as they grow.",
-    "Insects communicate using various methods, such as pheromones and sounds.",
-    "Insects have specialized sensory organs, such as antennae and compound eyes.",
-    "The praying mantis is known for its unique hunting behavior and distinctive front legs.",
-    "The silk produced by silkworms is used to make fabric and other products.",
-    "Honeybees are important pollinators and produce honey as a food source.",
-    "Some insects, like fireflies, produce light through a process called bioluminescence.",
-    "Insects have been used in medicine and scientific research for various purposes.",
-    "Insects are found in nearly every habitat on Earth, from rainforests to deserts.",
-    "Certain insects, like termites, are considered pests due to their damage to structures.",
-    "Butterflies are known for their vibrant colors and intricate wing patterns.",
-    "Insects contribute to the decomposition of organic matter, recycling nutrients in ecosystems.",
-]
-
-
-
-# Sample insect data
+# sample insect data
 insects = [
     Insect("Emperor Scorpion", "Pandinus imperator", "West Africa", "Insectavore", "Docile"),
     Insect("American Burying Beetle", "Nicrophorus americanus", "Central United States", "Insects and Carrion", "Nocturnal"),
@@ -65,15 +36,10 @@ insects = [
     Insect("Zebra Bug", "Oecophylla smaragdina", "Australia and Asia", "Decaying Matter", "Colony builders"),
     Insect("Orchid Mantis", "Hymenopus coronatus", "Southeast Asia", "Insects", "Mimicry"),
     Insect("Carolina Mantis", "Stagmomantis carolina", "North America", "Insects", "Ambush predator"),
-    Insect("Brown Recluse", "Loxosceles reclusa", "United States", "Insects", "Nocturnal"),
-    Insect("Cave Whip Spider", "Phrynus marginemaculatus", "Caves in North and South America", "Small insects", "Camouflaged"),
     Insect("Dead Leaf Mantis", "Deroplatys lobata", "Southeast Asia", "Insects", "Leaf mimic"),
     Insect("Zophobas Darkling Beetle", "Zophobas morio", "South America", "Decaying organic matter", "Burrowing"),
-    Insect("Antilles Treespider", "Ancylometes bogotensis", "Central and South America", "Insects and small vertebrates", "Ambush predator"),
     Insect("Giant African Millipede", "Archispirostreptus gigas", "Africa", "Decaying organic matter", "Millipede"),
     Insect("Jade Headed Buffalo Beetle", "Eupatorus gracilicornis", "Southeast Asia", "Decaying wood", "Colorful"),
-    Insect("Red Kneed Tarantula", "Brachypelma smithi", "Mexico", "Insects and small vertebrates", "Burrowing"),
-    Insect("Brazilian White Knee Tarantula", "Acanthoscurria geniculata", "South America", "Insects and small vertebrates", "Burrowing"),
     Insect("Texas Bullet Ant", "Paraponera clavata", "South America", "Insects and nectar", "Painful sting"),
     Insect("Giant Cockroach", "Megacephala batesi", "Central and South America", "Decaying matter", "Nocturnal"),
     Insect("Dragon Headed Katydid", "Ephippiger ephippiger", "Europe", "Leaves", "Camouflaged"),
@@ -81,15 +47,35 @@ insects = [
     Insect("Giant Dead Leaf Mantis", "Deroplatys dessicata", "Southeast Asia", "Insects", "Leaf mimic"),
     Insect("Peruvian Firestick", "Oreophoetes peruana", "South America", "Decaying vegetation", "Bioluminescent"),
     Insect("Peppered Roach", "Archimandrita tesselata", "Central America", "Decaying matter", "Nocturnal"),
-    Insect("Brazilian Salmon Pink Birdeater", "Lasiodora parahybana", "South America", "Insects and small vertebrates", "Burrowing"),
-    Insect("Flordia Orb Weaver Spider", "Eriophora ravilla", "Southeastern United States", "Insects caught in webs", "Orb-weaver"),
+    Insect("African Goliath Beetle", "Goliathus spp.", "Africa", "Decaying wood", "Colorful"),
+    Insect("Amazon Rainforest Giant Centipede", "Scolopendra gigantea", "Amazon Rainforest", "Insects and small animals", "Predator"),
+    Insect("Golden Tortoise Beetle", "Charidotella sexpunctata", "North America", "Plants", "Camouflaged"),
+    Insect("Firefly", "Lampyridae", "Worldwide", "Nectar", "Bioluminescent"),
+    Insect("Harlequin Flower Beetle", "Acrocinus longimanus", "South America", "Decaying wood", "Colorful"),
+    Insect("Vietnamese Centipede", "Scolopendra subspinipes", "Vietnam", "Insects and small animals", "Predator"),
+    Insect("Metallic Jewel Beetle", "Buprestidae", "Worldwide", "Tree sap", "Shiny"),
+    Insect("Luna Moth", "Actias luna", "North America", "Nectar", "Nocturnal"),
+    Insect("Giant Isopod", "Bathynomus giganteus", "Deep sea", "Scavenger", "Aquatic"),
+    Insect("Leafcutter Bee", "Megachile spp.", "Worldwide", "Leaves", "Pollinator"),
+    Insect("Glowworm", "Arachnocampa spp.", "New Zealand", "Small insects", "Bioluminescent"),
+    Insect("Rainbow Shield Bug", "Calidea dregii", "Australia", "Plants", "Colorful"),
+    Insect("Titan Beetle", "Titanus giganteus", "South America", "Decaying wood", "Massive"),
+    Insect("Velvet Ant", "Mutillidae", "Worldwide", "Nectar", "Nocturnal"),
+    Insect("Atlas Moth", "Attacus atlas", "Southeast Asia", "Nectar", "Nocturnal"),
+    Insect("Hercules Beetle", "Dynastes hercules", "Central and South America", "Tree sap", "Strong"),
+    Insect("Thorn Bug", "Umbonia crassicornis", "Central and South America", "Plants", "Camouflaged"),
+    Insect("Regal Moth", "Citheronia regalis", "North America", "Nectar", "Nocturnal"),
+    Insect("Mantis Shrimp", "Stomatopoda", "Tropical oceans", "Small animals", "Aquatic"),
+    Insect("Morpho Butterfly", "Morpho spp.", "Central and South America", "Nectar", "Colorful"),
+    Insect("Ladybug", "Coccinellidae", "Worldwide", "Aphids", "Beneficial"),
+    Insect("Leafhopper", "Cicadellidae", "Worldwide", "Plants", "Jumping"),
+    Insect("Fire Ant", "Solenopsis spp.", "Worldwide", "Insects and plants", "Aggressive"),
+    Insect("Katydid", "Tettigoniidae", "Worldwide", "Leaves", "Camouflaged"),
+    Insect("Honey Bee", "Apis mellifera", "Worldwide", "Nectar", "Pollinator"),
+    Insect("Webspinner", "Embioptera", "Tropical and temperate regions", "Decaying plant material", "Silk-producing"),
 ]
-    
-# Populate insect facts
-for insect, facts in zip(insects, insect_facts):
-    insect.facts = [AnimalFact(fact=fact, insect=insect) for fact in facts]
 
-# Insect details dictionary
+#Insect details dictionary
 insect_details = {
     insect.name: {
         "scientific_name": insect.scientific_name, 
