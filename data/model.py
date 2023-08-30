@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey, Table
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -13,7 +13,7 @@ class InsectTable(Base):
     diet = Column(String)
     behavior = Column(String)
     predator_id = Column(Integer, ForeignKey('predators.id'))
-    predator = relationship("Predator", back_populates="insects")
+    predator = relationship("Predator", secondary= "insect_predator_association", back_populates="insects")
 
 class SpiderTable(Base):
     __tablename__ = 'spiders'
@@ -25,7 +25,7 @@ class SpiderTable(Base):
     behavior = Column(String)
     venomous = Column(Boolean)
     predator_id = Column(Integer, ForeignKey('predators.id'))
-    predator = relationship("Predator", back_populates="spiders")
+    predator = relationship("Predator",secondary="spidder_predator_association", back_populates="spiders")
 
 
 class Predator(Base):
@@ -33,6 +33,12 @@ class Predator(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True)
 
-    insects = relationship("InsectTable", back_populates="predator")
-    spiders = relationship("SpiderTable", back_populates="predator")
-    
+    insects = relationship("InsectTable",secondary="insect_predator_association", back_populates="predator")
+    spiders = relationship("SpiderTable",secondary="spider_predator_association", back_populates="predator")
+
+insect_predator_association = Table(
+    'insect_predator_association',
+    Base.metadata,
+    Column('spider_id',Integer, ForeignKey('spider.id'),primary_key=True),
+    Column('predator_id',Integer, ForeignKey('predators.id'), primary_key=True)
+)
