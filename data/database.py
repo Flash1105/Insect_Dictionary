@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model import Base, InsectTable, SpiderTable, AnimalFact
-from Insects import insects
-from spiders import Spiders
+from data.Insects import insects
+from data.spiders import Spiders
 
 # Database setup
 DATABASE_URL = 'sqlite:///insect_database.db'
@@ -23,6 +23,8 @@ def populate_database(insects, spiders):
             habitat=insect_data.habitat,
             diet=insect_data.diet,
             behavior=insect_data.behavior
+        
+            
         )
         session.add(insect)
 

@@ -39,3 +39,4 @@ class AnimalFact(Base):
     insect = relationship("InsectTable", back_populates="facts")
     spider_id = Column(Integer, ForeignKey('spider.id'))
     spider = relationship("SpiderTable", back_populates="facts")
+

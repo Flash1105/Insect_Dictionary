@@ -92,24 +92,3 @@ def display_spider_list():
         print(f"{index}. {spider.name}")
     print()
     return spiders
-
-
-
-
-def display_animal_facts(animal):
-    print("\nSelected Animal Facts:")
-    facts = []
-    
-    if isinstance(animal, InsectTable):
-        facts = animal.facts
-    elif isinstance(animal, SpiderTable):
-        facts = animal.facts
-    
-    if facts:
-        for fact in facts:
-            print(f"Fact: {fact.content}")
-    else:
-        print("No facts available for this animal.")
-
-if __name__ == "__main__":
-    main_menu() 
