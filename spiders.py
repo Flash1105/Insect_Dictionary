@@ -1,12 +1,12 @@
 class Spider: 
-    def __init__ (self, name, scientific_name, habitat, diet, behavior, venomous):
+    def __init__ (self, name, scientific_name, habitat, diet, behavior, venomous, predators=[]):
         self.name = name 
         self.scientific_name = scientific_name
         self.habitat = habitat
         self.diet = diet
         self.behavior = behavior
         self.venomous = venomous
-
+        self.predators = predators
 spiders = [
     Spider("Black Widow", "Latrodectus spp.", "Worldwide", "Insects", "Nonaggressive", True, ["Birds", "Lizards", "Larger insects"]),
     Spider("Wolf Spider", "Lycosidae", "Worldwide", "Insects and small vertebrates", "Hunting", False, ["Birds", "Lizards", "Larger insects"]),
