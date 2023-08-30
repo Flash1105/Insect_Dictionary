@@ -1,21 +1,18 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model import Base, InsectTable, SpiderTable, AnimalFact
-from data.Insects import insects
-from data.spiders import Spiders
 
-# Database setup
-DATABASE_URL = 'sqlite:///insect_database.db'
+DATABASE_URL = "sqlite:///insect_dict.db"
 engine = create_engine(DATABASE_URL)
-Session = sessionmaker(bind=engine)
-session = Session()
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-# Create tables
 def create_tables():
+    from data.model import Base
     Base.metadata.create_all(engine)
 
-# Populate the database
 def populate_database(insects, spiders):
+    from data.model import InsectTable, SpiderTable
+    session = SessionLocal()
+    
     for insect_data in insects:
         insect = InsectTable(
             name=insect_data.name,
@@ -23,8 +20,6 @@ def populate_database(insects, spiders):
             habitat=insect_data.habitat,
             diet=insect_data.diet,
             behavior=insect_data.behavior
-        
-            
         )
         session.add(insect)
 
@@ -40,12 +35,15 @@ def populate_database(insects, spiders):
         session.add(spider)
 
     session.commit()
+    session.close()
 
-
-
-def initialize_database(session):
+def initialize_database():
+    from data.model import Base
     Base.metadata.drop_all(engine)
     create_tables()
+    
+    from Insects import insects
+    from spiders import Spiders
     populate_database(insects, Spiders)
 
 if __name__ == "__main__":
