@@ -1,14 +1,24 @@
 class Spider: 
-    def __init__ (self, name, scientific_name, habitat, diet, behavior, venomous):
+    def __init__ (self, name, scientific_name, habitat, diet, behavior, venomous, facts):
         self.name = name 
         self.scientific_name = scientific_name
         self.habitat = habitat
         self.diet = diet
         self.behavior = behavior
         self.venomous = venomous
+        self.facts = facts
+
+
+spider_facts = [
+    "Spiders are arachnids, not insects, and have eight legs.",
+    "Spiders produce silk from special glands, which they use to build webs.",
+    "Most spiders are venomous, using their venom to paralyze or kill their prey.",
+    "Spiders are found worldwide and occupy various habitats.",
+    "Some spiders are known for their unique behaviors, such as mimicry and jumping."
+]
 
 Spiders = [
-    Spider("Black Widow", "Latrodectus spp.", "Worldwide", "Insects", "Nonaggressive", True),
+    Spider("Black Widow", "Latrodectus spp.", "Worldwide", "Insects", "Nonaggressive", True, spider_facts),
     Spider("Wolf Spider", "Lycosidae", "Worldwide", "Insects and small vertebrates", "Hunting", False),
     Spider("Golden Silk Orb Weaver", "Nephila spp.", "Tropical regions", "Flying insects", "Orb-weaver", False),
     Spider("Brown Widow", "Latrodectus geometricus", "Worldwide", "Insects", "Venomous", True),
