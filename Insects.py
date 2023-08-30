@@ -8,11 +8,11 @@ class Insect:
         self.predators = predators if predators is not None else []
 # sample insect data
 insects = [
-    Insect("Emperor Scorpion", "Pandinus imperator", "West Africa", "Insectavore", "Docile", ["Birds", "Bats", "Lizards", "Frogs", "Spiders", "Wasps", "Praying mantises", "Beetles", "Ants", "Dragonflies", "Centipedes", "Scorpions", "Turtles", "Fish", "Small mammals", "Carnivorous plants", "Other insects", "Hedgehogs", "Shrews", "Moles", "Squirrels", "Foxes", "Snakes", "Mice", "Raccoons", "Skunks", "Weasels", "Owls", "Hawks", "Vultures"]),
-    Insect("American Burying Beetle", "Nicrophorus americanus", "Central United States", "Insects and Carrion", "Nocturnal", ["Carnivorous plants", "Other insects", "Small mammals", "Raccoons", "Skunks", "Weasels"]),
+    Insect("Emperor Scorpion", "Pandinus imperator", "West Africa", "Insectavore", "Docile", ["Birds", "Bats", "Lizards", "Frogs", "Spiders", "Wasps", "Praying mantises", "Beetles", "Ants", "Dragonflies", "Centipedes", "Scorpions", "Turtles", "Fish", "Small mammals", "Carnivorous plants", "Larger insects", "Hedgehogs", "Shrews", "Moles", "Squirrels", "Foxes", "Snakes", "Mice", "Raccoons", "Skunks", "Weasels", "Owls", "Hawks", "Vultures"]),
+    Insect("American Burying Beetle", "Nicrophorus americanus", "Central United States", "Insects and Carrion", "Nocturnal", ["Carnivorous plants", "Larger insects", "Small mammals", "Raccoons", "Skunks", "Weasels"]),
     Insect("Bat Cave Cockroach", "Eublaberus distanti", "Trinidad", "Organic Debris", "Nocturnal", ["Bats", "Spiders", "Small mammals"]),
     Insect("Blue Death Feigning Beetle", "Asbolus verrucosus", "Southern United States", "Decaying plant life", "Death feigning", ["Predator", "Centipedes", "Scorpions"]),
-    Insect("Domino Roach", "Polyphaga", "Various", "Scavenger", "Nocturnal", ["Other insects", "Small mammals"]),
+    Insect("Domino Roach", "Polyphaga", "Various", "Scavenger", "Nocturnal", ["Larger insects", "Small mammals"]),
     Insect("Eastern Lubber Grasshopper", "Romalea microptera", "Southeastern United States", "Plants", "Slow-moving", ["Birds", "Lizards", "Small mammals"]),
     Insect("Emerald Beetle", "Chrysina spp.", "Central America", "Decaying wood", "Nocturnal", ["Bats", "Spiders"]),
     Insect("Giant Jumping Stick", "Leptynia attenuata", "North America", "Plants", "Jumping", ["Birds", "Lizards"]),
@@ -50,7 +50,7 @@ insects = [
     Insect("African Goliath Beetle", "Goliathus spp.", "Africa", "Decaying wood", "Colorful", ["Birds", "Lizards"]),
     Insect("Amazon Rainforest Giant Centipede", "Scolopendra gigantea", "Amazon Rainforest", "Insects and small animals", "Predator", ["Birds", "Lizards"]),
     Insect("Golden Tortoise Beetle", "Charidotella sexpunctata", "North America", "Plants", "Camouflaged", ["Birds", "Lizards"]),
-    Insect("Firefly", "Lampyridae", "Worldwide", "Nectar", "Bioluminescent", ["Birds", "Bats", "Lizards", "Frogs", "Spiders", "Wasps", "Praying mantises", "Beetles", "Dragonflies", "Centipedes", "Scorpions", "Turtles", "Fish", "Small mammals", "Carnivorous plants", "Other insects", "Hedgehogs", "Shrews", "Moles", "Squirrels", "Foxes", "Snakes", "Mice", "Raccoons", "Skunks", "Weasels", "Owls", "Hawks", "Vultures"]),
+    Insect("Firefly", "Lampyridae", "Worldwide", "Nectar", "Bioluminescent", ["Birds", "Bats", "Lizards", "Frogs", "Spiders", "Wasps", "Praying mantises", "Beetles", "Dragonflies", "Centipedes", "Scorpions", "Turtles", "Fish", "Small mammals", "Carnivorous plants", "Larger insects", "Hedgehogs", "Shrews", "Moles", "Squirrels", "Foxes", "Snakes", "Mice", "Raccoons", "Skunks", "Weasels", "Owls", "Hawks", "Vultures"]),
     Insect("Harlequin Flower Beetle", "Acrocinus longimanus", "South America", "Decaying wood", "Colorful", ["Birds", "Lizards"]),
     Insect("Vietnamese Centipede", "Scolopendra subspinipes", "Vietnam", "Insects and small animals", "Predator", ["Birds", "Lizards"]),
     Insect("Metallic Jewel Beetle", "Buprestidae", "Worldwide", "Tree sap", "Shiny", ["Birds", "Lizards"]),

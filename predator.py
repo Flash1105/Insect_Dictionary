@@ -19,7 +19,7 @@ Predators = [
     Predator("Fish"),
     Predator("Small mammals"),
     Predator("Carnivorous plants"),
-    Predator("Other insects"),
+    Predator("Larger insects"),
     Predator("Hedgehogs"),
     Predator("Shrews"),
     Predator("Moles"),
