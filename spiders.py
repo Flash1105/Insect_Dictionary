@@ -1,3 +1,5 @@
+from data.model import AnimalFact
+
 class Spider: 
     def __init__ (self, name, scientific_name, habitat, diet, behavior, venomous, facts):
         self.name = name 
@@ -10,11 +12,27 @@ class Spider:
 
 
 spider_facts = [
-    "Spiders are arachnids, not insects, and have eight legs.",
-    "Spiders produce silk from special glands, which they use to build webs.",
-    "Most spiders are venomous, using their venom to paralyze or kill their prey.",
-    "Spiders are found worldwide and occupy various habitats.",
-    "Some spiders are known for their unique behaviors, such as mimicry and jumping."
+    "Spiders are arachnids, not insects.",
+    "Some spiders can produce silk that is stronger than steel.",
+    "Spiders use silk to create webs for trapping prey and building shelters.",
+    "Not all spiders spin webs; some are active hunters that rely on stealth and speed.",
+    "Spiders have two body segments: cephalothorax and abdomen.",
+    "Many spiders are venomous and use their venom to immobilize or kill prey.",
+    "Spiders are found on every continent except Antarctica.",
+    "The largest spider by leg span is the Goliath birdeater tarantula.",
+    "Spiders have multiple pairs of eyes that help them detect movement and light.",
+    "Some spiders exhibit elaborate courtship rituals and behaviors.",
+    "Tarantulas are known for their large size, hairy appearance, and docile behavior.",
+    "Jumping spiders are agile hunters that can leap many times their body length.",
+    "Female spiders may eat the male after mating, a behavior called sexual cannibalism.",
+    "Wolf spiders are ground-dwelling hunters with excellent eyesight.",
+    "Spiders molt, shedding their exoskeleton to grow.",
+    "Some spider species are social and live in colonies.",
+    "Certain spider venoms are being studied for potential medical applications.",
+    "Spiders are crucial predators in many ecosystems, helping control insect populations.",
+    "Some orb-weaver spiders create intricate and beautiful circular webs.",
+    "Spiders are ancient creatures that have been around for millions of years.",
+
 ]
 
 Spiders = [
@@ -46,7 +64,8 @@ Spiders = [
     Spider("Red Trapdoor Spider", "Stasimopus robertsoni", "South Africa", "Insects and small vertebrates", "Ambush predator", False,spider_facts),
     Spider("Ghost Spider", "Anyphaenidae", "Worldwide", "Insects", "Camouflage", False,spider_facts),
 ]
-
+for spider, facts in zip(Spiders, spider_facts):
+    spider.facts = [AnimalFact(fact=fact, spider=spider)]
 
 spider_details = {
     spider.name: {
