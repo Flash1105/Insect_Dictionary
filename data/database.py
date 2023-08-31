@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, configure_mappers
 from data.model import Base, InsectTable, SpiderTable
 from Insects import insects
 from spiders import spiders
@@ -40,6 +40,7 @@ def initialize_database():
     Base.metadata.drop_all(engine)
     create_tables()
     populate_database(insects, spiders)
+    configure_mappers()
 
 if __name__ == "__main__":
     initialize_database()
