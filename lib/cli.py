@@ -1,7 +1,8 @@
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from data.database import DATABASE_URL
-from data.model import InsectTable, SpiderTable
+from data.model import InsectTable, SpiderTable, PredatorTable
+from data.predator import Predators
 
 #setup for database
 engine = create_engine(DATABASE_URL)
@@ -75,8 +76,10 @@ def display_spider_details(spider):
 def display_insect_list():
     print("Available Animals:")
     insects = session.query(InsectTable).all()
-    spiders = session.query(SpiderTable).all()
     
+    for insect in insects: 
+        predator_names_for_this_insect = [predator for predator in Predators if insect.name in predator]
+        insect.predators = [predator for predator in Predators if predator in predator_names_for_this_insect]
     for index, animal in enumerate(insects, start=1):
         print(f"{index}. {animal.name}")
     print()
@@ -86,6 +89,10 @@ def display_spider_list():
     print("Available Spiders:")
     spiders = session.query(SpiderTable).all()
     
+    for spider in spiders:
+        predator_names_for_this_spider = [predator for predator in Predators if spider.name in predator]
+        spider.predators = [predator for predator in Predators if predator in predator_names_for_this_spider]
+
     for index, spider in enumerate(spiders, start=1):
         print(f"{index}. {spider.name}")
     print()
