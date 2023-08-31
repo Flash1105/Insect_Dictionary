@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from data.model import Base, InsectTable, SpiderTable
 from Insects import insects
-from spiders import Spiders
+from spiders import spiders
 
 DATABASE_URL = 'sqlite:///insect_database.db'
 engine = create_engine(DATABASE_URL)
@@ -39,7 +39,7 @@ def populate_database(insects, spiders):
 def initialize_database():
     Base.metadata.drop_all(engine)
     create_tables()
-    populate_database(insects, Spiders)
+    populate_database(insects, spiders)
 
 if __name__ == "__main__":
     initialize_database()
