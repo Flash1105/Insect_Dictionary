@@ -81,7 +81,8 @@ insect_details = {
         "scientific_name": insect.scientific_name, 
         "habitat": insect.habitat,
         "diet": insect.diet, 
-        "behavior": insect.behavior
+        "behavior": insect.behavior,
+        "predators": insect.predators
     }
     for insect in insects
 }

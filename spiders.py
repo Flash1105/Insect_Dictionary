@@ -44,7 +44,8 @@ spider_details = {
         "habitat": spider.habitat, 
         "diet": spider.diet,
         "behavior": spider.behavior,
-        "venomous": spider.venomous
+        "venomous": spider.venomous,
+        "predators": spider.predators
 
     }
     for spider in spiders
