@@ -51,16 +51,16 @@ def main_menu():
         else:
             print("Invalid choice. Please enter a valid number.\n")
 
-def display_insect_details(animal):
+def display_insect_details(insect):
     print("\nSelected Insect:")
-    print(f"Name: {animal.name}")
-    print(f"Scientific Name: {animal.scientific_name}")
-    print(f"Habitat: {animal.habitat}")
-    print(f"Diet: {animal.diet}")
-    print(f"Behavior: {animal.behavior}")
-    if isinstance(animal, SpiderTable):
-        print(f"Venomous: {'Yes' if animal.venomous else 'No'}")
-    print (f"Predators: {', '.join(p.name for p in animal.predators)}")
+    print(f"Name: {insect.name}")
+    print(f"Scientific Name: {insect.scientific_name}")
+    print(f"Habitat: {insect.habitat}")
+    print(f"Diet: {insect.diet}")
+    print(f"Behavior: {insect.behavior}")
+    if isinstance(insect, SpiderTable):
+        print(f"Venomous: {'Yes' if insect.venomous else 'No'}")
+    print (f"Predators: {', '.join(p.name for p in insect.predators)}")
 
 def display_spider_details(spider):
     print("\nSelected Spider:")
