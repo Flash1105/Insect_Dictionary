@@ -29,7 +29,7 @@ class InsectTable(Base):
     diet = Column(String)
     behavior = Column(String)
 
-    predator = relationship("PredatorTable", secondary=insect_predator_association, back_populates="insect")
+    predators = relationship("PredatorTable", secondary=insect_predator_association, back_populates="insects")
 
 class SpiderTable(Base):
     __tablename__ = 'spiders'
@@ -41,16 +41,15 @@ class SpiderTable(Base):
     behavior = Column(String)
     venomous = Column(Boolean)
 
-    predators = relationship("PredatorTable",secondary=spider_predator_association, back_populates="spider")
+    predators = relationship("PredatorTable",secondary=spider_predator_association, back_populates="spiders")
 
 
 class PredatorTable(Base):
     __tablename__='predators'
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True)
-    prey= relationship("InsectTable", secondary=insect_predator_association, back_populates= "predator")
-    insects = relationship("InsectTable",secondary="insect_predator_association", back_populates="predator")
-    spiders = relationship("SpiderTable",secondary="spider_predator_association", back_populates="predator")
+    insects = relationship("InsectTable",secondary="insect_predator_association", back_populates="predators")
+    spiders = relationship("SpiderTable",secondary="spider_predator_association", back_populates="predators")
 
 association_table = Table(
     'insect_predator_association',
