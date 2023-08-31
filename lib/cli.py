@@ -74,29 +74,28 @@ def display_spider_details(spider):
     print(f"Predators: {', '.join(p.name for p in spider.predators)}")
 
 def display_insect_list():
-    print("Available Animals:")
+    print("Available Insects:")
     insects = session.query(InsectTable).all()
-    
-    for insect in insects: 
-        predator_names_for_this_insect = [predator for predator in Predators if insect.name in predator]
-        insect.predators = [predator for predator in Predators if predator in predator_names_for_this_insect]
-    for index, animal in enumerate(insects, start=1):
-        print(f"{index}. {animal.name}")
+
+    for insect in insects:
+        insect.predators = [predator for predator in Predators if predator in insect.name]
+
+    for index, insect in enumerate(insects, start=1):
+        print(f"{index}. {insect.name}")
     print()
     return insects
 
 def display_spider_list():
     print("Available Spiders:")
     spiders = session.query(SpiderTable).all()
-    
+
     for spider in spiders:
-        predator_names_for_this_spider = [predator for predator in Predators if spider.name in predator]
-        spider.predators = [predator for predator in Predators if predator in predator_names_for_this_spider]
+        predator_names_for_this_spider = [predator for predator in Predators if predator in spider.name]
+        spider.predators = session.query(PredatorTable).filter(PredatorTable.name.in_(predator_names_for_this_spider)).all()
 
     for index, spider in enumerate(spiders, start=1):
         print(f"{index}. {spider.name}")
     print()
     return spiders
-
 if __name__ == "__main__":
     main_menu()
