@@ -4,6 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+#association for many-to-many relationship
 insect_predator_association = Table(
     "insect_predator_association",
     Base.metadata,
@@ -28,7 +29,7 @@ class InsectTable(Base):
     diet = Column(String)
     behavior = Column(String)
 
-    predator = relationship("Predator", secondary= "insect_predator_association", back_populates="insects")
+    predator = relationship("PredatorTable", secondary=insect_predator_association, back_populates="insect")
 
 class SpiderTable(Base):
     __tablename__ = 'spiders'
@@ -40,14 +41,21 @@ class SpiderTable(Base):
     behavior = Column(String)
     venomous = Column(Boolean)
 
-    predator = relationship("Predator",secondary="spidder_predator_association", back_populates="spiders")
+    predators = relationship("PredatorTable",secondary=spider_predator_association, back_populates="spider")
 
 
-class Predator(Base):
+class PredatorTable(Base):
     __tablename__='predators'
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True)
-
+    prey= relationship("InsectTable", secondary=insect_predator_association, back_populates= "predator")
     insects = relationship("InsectTable",secondary="insect_predator_association", back_populates="predator")
     spiders = relationship("SpiderTable",secondary="spider_predator_association", back_populates="predator")
 
+association_table = Table(
+    'insect_predator_association',
+    Base.metadata, 
+    Column('insect_id',Integer, ForeignKey('insects.id')),
+    Column('predator_id', Integer, ForeignKey('predators.id')),
+    extend_existing=True
+)
