@@ -61,7 +61,7 @@ def display_insect_details(insect):
     print(f"Behavior: {insect.behavior}")
     if isinstance(insect, SpiderTable):
         print(f"Venomous: {'Yes' if insect.venomous else 'No'}")
-    print (f"Predators: {', '.join(p.name for p in insect.predators)}")
+    print(f"Predators: {', '.join(p.name for p in insect.predators)}")
 
 def display_spider_details(spider):
     print("\nSelected Spider:")
@@ -71,7 +71,7 @@ def display_spider_details(spider):
     print(f"Diet: {spider.diet}")
     print(f"Behavior: {spider.behavior}")
     print(f"Venomous: {'Yes' if spider.venomous else 'No'}")
-    print (f"Predators: {','.join(p.name for p in spider.predators)}")
+    print(f"Predators: {', '.join(p.name for p in spider.predators)}")
 
 def display_insect_list():
     print("Available Animals:")
